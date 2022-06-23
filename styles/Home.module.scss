@@ -1,0 +1,56 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.elevator{
+  width: 100%;
+}
+
+.floor{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 30vw;
+
+}
+.actionBlock{
+
+}
+.floorBlock {
+  padding-block: 30px;
+  background-color: aliceblue;
+  width: 25%;
+}
+.moveBlock{
+  position: absolute;
+  width: 40px;
+  background-color: aqua;
+}
+.floorNum{
+  margin-inline-start: 10px;
+  display: flex;
+  width: 15%;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+}
+.floorBtn{
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: transparent;
+  &:active{
+    transform: scale(.95);
+    background-color: aqua;
+  }
+}
