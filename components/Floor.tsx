@@ -5,32 +5,23 @@ class Floor extends React.Component<any, any> {
     constructor(props: any) {
         super(props);
         this.state = {
-            number: 1
+            position: 0,
+            y: 0
         }
+        this.onMoveBlock = this.onMoveBlock.bind(this);
+    }
+
+    onMoveBlock() {
+
     }
 
     render() {
-        let number: number = this.props.number;
-        let blockFloor;
-        if(number == 1){
-          blockFloor =
-                <div className={styles.moveBlock}></div>
 
-        }else {
-            blockFloor =   ""
-        }
-        return (
-            <div className={styles.floor}>
+        let number: number = this.props.position;
+        console.log("numberFloor",number);
+            return <div className={styles.moveBlock} style={{transform: `translateY(${4*(10-number)}vw)`}}></div>
 
-                <div className={styles.floorBlock}></div>
-                {blockFloor}
-                <div className={styles.floorNum}>
-                    <span>{number}</span>
-                    <button className={styles.floorBtn}></button>
-                </div>
-            </div>
 
-        )
     }
 
 }
