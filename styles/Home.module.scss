@@ -39,12 +39,44 @@
   width: 10vw;
 }
 .moveBlock{
-  transition: transform 1s ease;
+  text-align: center;
+  //transition: transform 1s ease;
   height: 4vw;
   width: 10vw;
   background-color: aqua;
+}
+
+.blinkBlock{
+  transition: none;
+  animation: blink 3s linear;
+}
+
+@keyframes blink {
+  0%{
+    opacity: 1;
+  }
+  16%{
+    opacity: 0;
+  }
+  33%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+  66%{
+    opacity: 1;
+  }
+  83%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+
 
 }
+
 .floorNum{
   height: 4vw;
   margin-inline-start: 10px;
@@ -68,3 +100,5 @@
     background-color: darkorange;
   }
 }
+
+
