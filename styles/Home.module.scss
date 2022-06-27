@@ -39,11 +39,13 @@
   width: 10vw;
 }
 .moveBlock{
-  text-align: center;
-  //transition: transform 1s ease;
+  display: flex;
   height: 4vw;
   width: 10vw;
   background-color: aqua;
+  background-position-y: bottom;
+  align-items: center;
+  justify-content: center;
 }
 
 .blinkBlock{
@@ -100,5 +102,12 @@
     background-color: darkorange;
   }
 }
-
+.activeBtn{
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+  border: transparent;
+  background-color: darkorange;
+}
 

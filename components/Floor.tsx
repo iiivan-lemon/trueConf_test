@@ -39,7 +39,16 @@ class Floor extends React.Component<any, any> {
     waitingUnBlink() {
 
         this.setState({isBlink: false})
-        console.log("BLOCK",this.state);
+        console.log("BLOCK", this.state);
+    }
+
+    checkDirection(): string {
+        if (this.props.position > this.props.curPos) {
+            return "▲"
+        } else if (this.props.position < this.props.curPos) {
+            return "▼"
+        }
+        return ""
     }
 
     render() {
@@ -48,18 +57,26 @@ class Floor extends React.Component<any, any> {
         let curNum: number = this.props.curPos;
         let classBlock = styles.moveBlock;
         let textFloor = "";
-        let styleBlock =  {transform: `translateY(${4 * (10 - number)}vw)`,
+
+        let styleBlock = {
+            transform: `translateY(${4 * (10 - number)}vw)`,
             transitionDuration: `${Math.abs(curNum - number)}s`,
             transitionProperty: `transform`,
             transitionDelay: `0s`,
-            transitionTimingFunction: "linear"};
+            transitionTimingFunction: "linear"
+        };
         if (this.state.isBlink) {
             classBlock += " " + styles.blinkBlock;
         }
-        if(number != curNum){
+        if (number != curNum) {
             textFloor = number.toString();
         }
-        return (<div id="block" onAnimationEnd={()=>{this.waitingUnBlink();this.props.onSetBlink(this.state.isBlink)}} onAnimationStart={this.props.onSetBlink} onTransitionEnd={this.waitingBlink}
+        textFloor += this.checkDirection();
+
+        return (<div id="block" onAnimationEnd={() => {
+            this.waitingUnBlink();
+            this.props.onSetBlink(number)
+        }} onAnimationStart={this.props.onSetBlink} onTransitionEnd={this.waitingBlink}
                      className={classBlock} style={styleBlock}>{textFloor}</div>)
 
 
