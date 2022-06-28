@@ -20,7 +20,7 @@
 .floors{
   width: 10vw;
   height: 40vw;
-  background-color: aliceblue;
+  background-color: var(--floors-color);
 }
 .btns{
 
@@ -42,7 +42,7 @@
   display: flex;
   height: 4vw;
   width: 10vw;
-  background-color: aqua;
+  background-color: var(--btn-color);
   background-position-y: bottom;
   align-items: center;
   justify-content: center;
@@ -95,19 +95,12 @@
   border-radius: 5px;
   border: transparent;
   &:hover{
-    background-color: aqua;
+    background-color: var(--btn-color);
   }
   &:active{
     transform: scale(.9);
-    background-color: darkorange;
+    background-color: var(btn-color-hover);
   }
 }
-.activeBtn{
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  border: transparent;
-  background-color: darkorange;
-}
+
 

@@ -14,3 +14,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root{
+    --floors-color:aliceblue;
+    --btn-color:aqua;
+    --btn-color-hover:darkorange;
+}
